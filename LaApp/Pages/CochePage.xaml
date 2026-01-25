@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:LaApp.ViewModels"
+             x:DataType="viewModels:CocheViewModel"
+             x:Class="LaApp.Pages.CochePage" >
+    <ContentPage.Background>
+        <LinearGradientBrush EndPoint="1,0">
+            <GradientStop Color="#00429C" Offset="0.01" />
+            <GradientStop Color="#091647" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+    <ScrollView>
+        <!-- CONTENIDO -->
+        <Grid ColumnDefinitions="Auto,*" RowDefinitions="*">
+
+            <!-- BOTÓN VOLVER -->
+            <Border Grid.Column="0" MaximumWidthRequest="50">
+                <ImageButton Source="arrow_back.png"
+                              Command="{Binding HomeBtnCommand}"
+                              HorizontalOptions="Start"/>
+            </Border>
+
+            <!-- CONTENIDO PRINCIPAL -->
+            <VerticalStackLayout Grid.Column="1"
+                                 VerticalOptions="Center"
+                                 Margin="200,0">
+                <Border StrokeShape="RoundRectangle 10" Margin="30">
+                    <Button Text="Añadir" 
+                            TextColor="White"
+                            Command="{Binding DisplayPopupCommand}"
+                            FontAttributes="Bold"
+                            VerticalOptions="Start"
+                            BackgroundColor="#30000050" />
+                </Border>
+                <CollectionView ItemsSource="{Binding Coches}" Margin="10">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="viewModels:CocheViewModel">
+                            <VerticalStackLayout>
+                                <Border StrokeThickness="0" Margin="5"> </Border>
+                                <Border Margin="5"
+                                    Padding="10"
+                                    BackgroundColor="#30000050"
+                                    StrokeShape="RoundRectangle 10">
+                                <HorizontalStackLayout Spacing="20">
+                                    <Label Text="{Binding Marca}" 
+                                            TextColor="White"
+                                            FontAttributes="Bold"
+                                            FontSize="Medium"/>
+                                    <Label Text="{Binding Modelo}" 
+                                            TextColor="White"/>
+                                </HorizontalStackLayout>
+                                </Border>
+                            </VerticalStackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+        </Grid>
+    </ScrollView>
+</ContentPage>

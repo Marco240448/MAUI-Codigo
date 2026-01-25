@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:LaApp.Views"
+             x:Name="this"
+             xmlns:controls="clr-namespace:LaApp.Controls"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:DataType="local:EntryView"
+             x:Class="LaApp.Views.EntryView">
+    <Border StrokeShape="10" Margin="10">
+        <Grid ColumnDefinitions="Auto, *, Auto">
+            <Image Source="{Binding IconSource}" MinimumHeightRequest="30" MinimumWidthRequest="30"/>
+            <controls:NoBorderEntry Grid.Column="1"
+                                x:Name="noBorderEntry"
+                                Placeholder="{Binding Placeholder}"
+                                PlaceholderColor="{Binding Color}"
+                                Text="{Binding Text}"
+                                VerticalOptions="Center"
+                                IsPassword="{Binding IsPassword}"
+                                TextColor="White"
+                                ClearButtonVisibility="WhileEditing"/>
+        </Grid>
+    </Border>
+</ContentView>
+

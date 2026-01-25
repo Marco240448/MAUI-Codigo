@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:LaApp.ViewModels"
+             x:DataType="viewModels:HomeViewModel"
+             x:Class="LaApp.Pages.HomePage" >
+    <ContentPage.Background>
+        <LinearGradientBrush EndPoint="1,0">
+            <GradientStop Color="#00429C" Offset="0.01" />
+            <GradientStop Color="#091647" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+    
+        <!-- CONTENIDO -->
+    <Grid ColumnDefinitions="*,*,*,*"  RowDefinitions="*,*,*">
+
+        <Border Grid.Column="0" Grid.Row="0" Margin="30" StrokeShape="20">
+            <Button Text="CONVERSOR"
+                TextColor="White"
+                HorizontalOptions="Fill"
+                BackgroundColor="#30000050"
+                FontAttributes="Bold"
+                Command="{Binding ConversorBtnCommand}" />
+        </Border>
+
+        <Border Grid.Column="1" Grid.Row="0" Margin="30" StrokeShape="20">
+            <Button Text="GARAJE"
+                TextColor="White"
+                HorizontalOptions="Fill"
+                BackgroundColor="#30000050"
+                FontAttributes="Bold"
+                Command="{Binding CocheBtnCommand}" />
+        </Border>
+
+        <Border Grid.Column="2" Grid.Row="0" Margin="30" StrokeShape="20">
+            <Button Text="Button 3"
+                TextColor="White"
+                HorizontalOptions="Fill"
+                BackgroundColor="#30000050"
+                FontAttributes="Bold"
+                Command="{}" />
+        </Border>
+
+        <Border Grid.Column="3" Grid.Row="0" Margin="30" StrokeShape="20">
+            <Button Text="Button 4"
+                TextColor="White"
+                HorizontalOptions="Fill"
+                BackgroundColor="#30000050"
+                FontAttributes="Bold"
+                Command="{}" />
+        </Border>
+
+        <Border Grid.Column="0" Grid.Row="1" Margin="30" StrokeShape="20">
+            <Button Text="Button 5"
+                TextColor="White"
+                HorizontalOptions="Fill"
+                BackgroundColor="#30000050"
+                FontAttributes="Bold"
+                Command="{}" />
+        </Border>
+
+        <Border Grid.Column="1" Grid.Row="1" Margin="30" StrokeShape="20">
+            <Button Text="Button 6"
+                TextColor="White"
+                HorizontalOptions="Fill"
+                BackgroundColor="#30000050"
+                FontAttributes="Bold"
+                Command="{}" />
+        </Border>
+
+        <Border Grid.Column="2" Grid.Row="1" Margin="30" StrokeShape="20">
+            <Button Text="Button 7"
+                TextColor="White"
+                HorizontalOptions="Fill"
+                BackgroundColor="#30000050"
+                FontAttributes="Bold"
+                Command="{}" />
+        </Border>
+
+        <Border Grid.Column="3" Grid.Row="1" Margin="30" StrokeShape="20">
+            <Button Text="Button 8"
+                TextColor="White"
+                HorizontalOptions="Fill"
+                BackgroundColor="#30000050"
+                FontAttributes="Bold"
+                Command="{}" />
+        </Border>
+
+        <Border Grid.Column="0" Grid.Row="2" Margin="30" StrokeShape="20">
+            <Button Text="Button 9"
+                TextColor="White"
+                HorizontalOptions="Fill"
+                BackgroundColor="#30000050"
+                FontAttributes="Bold"
+                Command="{}" />
+        </Border>
+
+        <Border Grid.Column="1" Grid.Row="2" Margin="30" StrokeShape="20">
+            <Button Text="Button 10"
+                TextColor="White"
+                HorizontalOptions="Fill"
+                BackgroundColor="#30000050"
+                FontAttributes="Bold"
+                Command="{}" />
+        </Border>
+
+        <Border Grid.Column="2" Grid.Row="2" Margin="30" StrokeShape="20">
+            <Button Text="Button 11"
+                TextColor="White"
+                HorizontalOptions="Fill"
+                BackgroundColor="#30000050"
+                FontAttributes="Bold"
+                Command="{}" />
+        </Border>
+        <Border Grid.Column="3" Grid.Row="2" Margin="30" StrokeShape="20">
+            <Button Text="Button 11"
+                TextColor="White"
+                HorizontalOptions="Fill"
+                Background="#30000050"
+                FontAttributes="Bold"
+                Command="{}" />
+        </Border>
+    </Grid>
+</ContentPage>

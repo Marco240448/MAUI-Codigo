@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<toolkit:Popup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:vm="clr-namespace:LaApp.ViewModels"
+             xmlns:models="clr-namespace:LaApp.Models"
+             x:Class="LaApp.PopUps.CochePopUp" 
+             x:TypeArguments="models:Coches"
+             x:DataType="vm:CochePopUpViewModel" >
+    
+    <VerticalStackLayout MinimumWidthRequest="500">
+        <Label Text="AÑADIR COCHE"
+                TextColor="Black"
+                FontAttributes="Bold"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                Margin="5" />
+        <Entry Text="{Binding Coche.Marca}" 
+                Placeholder="Marca" 
+                TextColor="#091647"
+                ClearButtonVisibility="WhileEditing"
+                Margin="5" />
+        <Entry Text="{Binding Coche.Modelo}"
+                Placeholder="Modelo"
+                TextColor="#091647"
+                ClearButtonVisibility="WhileEditing"
+                Margin="5"/>
+
+        <Button Text="Save"
+                BorderWidth="2"
+                BorderColor="LightGray"
+                BackgroundColor="#3D81FF"
+                TextColor="White"
+                FontAttributes="Bold"
+                Command="{Binding SaveCommand}"
+                Margin="5"/>
+        
+        <Border StrokeThickness="2" Stroke="Transparent"/>
+
+        <Button Text="Cancel" 
+                BorderWidth="2"
+                BorderColor="LightGray"
+                BackgroundColor="#FF0000"
+                TextColor="White"
+                FontAttributes="Bold"
+                Command="{Binding CancelCommand}" 
+                Margin="5" />
+    </VerticalStackLayout>
+</toolkit:Popup>

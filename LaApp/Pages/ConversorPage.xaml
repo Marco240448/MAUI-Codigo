@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:LaApp.ViewModels"
+             xmlns:views="clr-namespace:LaApp.Views"
+             x:DataType="viewModels:ConversorViewModel"  
+             x:Class="LaApp.Pages.ConversorPage">
+
+    <ContentPage.Background>
+        <LinearGradientBrush EndPoint="1,0">
+            <GradientStop Color="#00429C" Offset="0.01" />
+            <GradientStop Color="#091647" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+
+    <!-- CONTENEDOR RAÍZ (OCUPA TODO EL ALTO) -->
+    <Grid RowDefinitions="*">
+
+        <!-- CONTENIDO -->
+        <Grid ColumnDefinitions="Auto,*">
+
+            <!-- BOTÓN VOLVER -->
+            <Border Grid.Column="0" MaximumWidthRequest="50">
+                <ImageButton Source="arrow_back.png"
+                             Command="{Binding HomeBtnCommand}"
+                             HorizontalOptions="Start"/>
+            </Border>
+
+            <!-- CONTENIDO PRINCIPAL -->
+            <VerticalStackLayout Grid.Column="1"
+                                 VerticalOptions="Center"
+                                 Margin="300,0">
+
+                <Label Text="Conversor de divisas"
+                       FontSize="24"
+                       HorizontalOptions="Center"
+                       TextColor="White"/>
+
+                <Border StrokeShape="RoundRectangle 30"
+                        StrokeThickness="2"
+                        Stroke="LightGray"
+                        Padding="40"
+                        Margin="20"
+                        Background="White">
+
+                    <VerticalStackLayout Spacing="15">
+
+                        <!-- MONEDA ORIGEN -->
+                        <Border StrokeShape="RoundRectangle 5"
+                                MinimumHeightRequest="50">
+                            <Grid ColumnDefinitions="*,*">
+                                <Entry Grid.Column="0"
+                                       Keyboard="Numeric"
+                                       Text="{Binding Moneda1}"
+                                       TextColor="#091647"
+                                       ClearButtonVisibility="WhileEditing"
+                                       IsReadOnly="False"
+                                       VerticalOptions="Center"/>
+                                <Picker Grid.Column="1"
+                                       ItemsSource="{}"
+                                       ItemDisplayBinding="{}"
+                                       VerticalOptions="Center"/>  
+                            </Grid>
+                        </Border>
+
+                        <!-- SWAP -->
+                        <Border StrokeShape="RoundRectangle 25"
+                                MaximumWidthRequest="50"
+                                HorizontalOptions="Center">
+                            <ImageButton Source="swap.png"
+                                         Command="{Binding CambiarMonedaCommand}"/>
+                        </Border>
+
+                        <!-- MONEDA DESTINO -->
+                        <Border StrokeShape="RoundRectangle 5"
+                                MinimumHeightRequest="50">
+                            <Grid ColumnDefinitions="*,*">
+                                <Entry Grid.Column="0"
+                                    Keyboard="Numeric"
+                                    Text="{Binding Moneda2}"
+                                    TextColor="#091647"
+                                    ClearButtonVisibility="WhileEditing"
+                                    IsReadOnly="True"
+                                    VerticalOptions="Center"/>
+                                <Picker Grid.Column="1"
+                                    ItemsSource="{}"
+                                    ItemDisplayBinding="{}"
+                                    VerticalOptions="Center"/>  
+                            </Grid>
+                        </Border>
+
+                        <!-- INFO Y BOTÓN -->
+                        <Grid ColumnDefinitions="*,*">
+                            <StackLayout Grid.Column="0">
+                                <Label Text="{Binding Cambio}"
+                                       FontSize="20"
+                                       FontAttributes="Bold"
+                                       TextColor="#091647"/>
+                                <Label Text="Tasa de mercado"
+                                       FontSize="15"
+                                       TextColor="#091647"/>
+                            </StackLayout>
+
+                            <Button Grid.Column="1"
+                                    Text="Convertir dinero"
+                                    CornerRadius="5"
+                                    FontAttributes="Bold"
+                                    TextColor="White"
+                                    BackgroundColor="#3D81FF"
+                                    Padding="30,10"
+                                    Command="{Binding ConvertirMonedaCommand}"/>
+                        </Grid>
+                    </VerticalStackLayout>
+                </Border>
+            </VerticalStackLayout>
+        </Grid>
+    </Grid>
+</ContentPage>

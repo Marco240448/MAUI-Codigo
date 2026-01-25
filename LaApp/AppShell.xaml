@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="LaApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:LaApp.Pages"
+    Shell.FlyoutBehavior="Disabled" >
+    
+    <ShellContent
+         ContentTemplate="{DataTemplate local:LoginPage}"
+         Route="LoginPage" />
+    <TabBar
+         Route="TabBar">
+        <Tab Title="Home" Icon="home_icon.png">
+        <ShellContent
+                ContentTemplate="{DataTemplate local:HomePage}"
+                Route="HomePage" />
+        </Tab>
+        <Tab Title="Perfil" Icon="profile_icon.png">
+            <ShellContent
+                 ContentTemplate="{DataTemplate local:ProfilePage}"
+                 Route="ProfilePage" />
+        </Tab>
+    </TabBar>
+    <ShellContent
+         ContentTemplate="{DataTemplate local:ConversorPage}"
+         Route="ConversorPage" />
+    <ShellContent
+         ContentTemplate="{DataTemplate local:CochePage}"
+         Route="CochePage" />
+
+</Shell>

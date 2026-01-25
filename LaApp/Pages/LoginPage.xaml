@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:LaApp.ViewModels"
+             xmlns:views="clr-namespace:LaApp.Views"
+             x:DataType="viewModels:LoginViewModel"
+             x:Class="LaApp.Pages.LoginPage" >
+    <VerticalStackLayout VerticalOptions="Center">
+        <Grid ColumnDefinitions="*,Auto,*" Padding="10" Margin="30">
+            <Border Grid.Column="1" StrokeShape="Ellipse 50, 50, 50, 50" >
+                <Image Source="dotnet_bot.png" 
+                HeightRequest="150" 
+                WidthRequest="150"
+                Aspect="AspectFill"/>
+            </Border>
+        </Grid>
+        <Grid ColumnDefinitions="*,*,*" RowDefinitions="Auto,Auto,Auto,Auto" Padding="10">
+            <views:EntryView
+                 Grid.Column="1"
+                 Grid.Row="1"
+                 IconSource="account_circle.png"
+                 Text="{Binding User}"
+                 Placeholder="Usuario"
+                 PlaceholderColor="White"  />
+            <views:EntryView
+                 Grid.Column="1"
+                 Grid.Row="2"
+                 IconSource="lock.png"
+                 Text="{Binding Password}"
+                 IsPassword="true"
+                 Placeholder="Contraseña"
+                 PlaceholderColor="White"/>
+            <Button
+             Grid.Column="1"
+             Grid.Row="3"
+             Margin="5"
+             Text="Iniciar Sesión"
+             BackgroundColor="#3D81FF"
+             Command="{Binding LoginBtnCommand}"/>
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>

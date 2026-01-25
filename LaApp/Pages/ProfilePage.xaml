@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewModels="clr-namespace:LaApp.ViewModels"
+             x:Class="LaApp.Pages.ProfilePage" 
+             x:DataType="viewModels:ProfileViewModel" >
+    
+    <VerticalStackLayout VerticalOptions="Center">
+        <Grid ColumnDefinitions="*,Auto,*" Padding="10" Margin="20">
+            <Border Grid.Column="1" StrokeShape="Ellipse 50, 50, 50, 50" >
+                <Image Source="dotnet_bot.png" 
+                       HeightRequest="150" 
+                       WidthRequest="150"
+                       Aspect="AspectFill"/>
+            </Border>
+        </Grid>
+        <Grid ColumnDefinitions="*,*,*" RowDefinitions="Auto,Auto" Padding="10">
+            <Label
+                    Grid.Column="1"
+                    Margin="20"
+                    HorizontalOptions="Center"
+                    Text="{Binding User}"/>
+            <Button   
+                    Grid.Column="1"
+                    Grid.Row="1"
+                    Margin="20"
+                    BackgroundColor="#3D81FF"
+                    Text="Cerrar Sesión"
+                    Command="{Binding LogOutBtnCommand}"/>
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>
