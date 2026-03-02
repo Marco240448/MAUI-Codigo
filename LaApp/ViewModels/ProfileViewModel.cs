@@ -11,10 +11,10 @@ namespace LaApp.ViewModels
         [ObservableProperty]
         private string _user;
 
-        public ProfileViewModel(LoginPage loginPage, LoginViewModel loginViewmodel)
+        public ProfileViewModel(LoginPage loginPage, LoginViewModel loginViewModel)
         {
             this.loginPage = loginPage;
-            _user = loginViewmodel.User;
+            _user = loginViewModel.User;
         }
 
         [RelayCommand]

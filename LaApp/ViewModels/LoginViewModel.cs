@@ -9,9 +9,9 @@ namespace LaApp.ViewModels
     public partial class LoginViewModel : ObservableObject
     {
         [ObservableProperty]
-        private string _user = "Marco";
+        private string _user;
         [ObservableProperty]
-        private string _password = "1234";
+        private string _password;
 
         [RelayCommand]
         private async Task LoginBtn()
